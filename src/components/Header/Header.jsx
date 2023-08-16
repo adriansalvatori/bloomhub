@@ -7,13 +7,12 @@ import SearchBar from '../SearchBar/SearchBar';
 
 const Header = () => {
   const location = useLocation();
-  const navigate = useNavigate();
   const isIndexRoute = location.pathname === '/';
 
   return (
     <>
       <header className={`header ${isIndexRoute ? 'header-index' : ''}`}>
-        <Logo onClick={navigate('/home')} />
+        <Logo />
         {!isIndexRoute && <User />}
       </header>
       {!isIndexRoute && <SearchBar />}
