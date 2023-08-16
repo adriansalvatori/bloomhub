@@ -25,7 +25,6 @@ const Icon = ({ name, color, accent }) => {
     <IconContext.Provider
       value={{
         color: color,
-        duotoneSecondaryColor: accent,
         size: 32,
         weight: 'duotone',
         mirrored: false,

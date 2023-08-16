@@ -11,12 +11,14 @@ const useFavoriteList = () => {
   }, []);
 
   const addToFavorites = (productId) => {
+    console.log('addToFavorites', productId);
     const updatedFavorites = [...favorites, productId];
     setFavorites(updatedFavorites);
     localStorage.setItem(FAVORITES_KEY, JSON.stringify(updatedFavorites));
   };
 
   const removeFromFavorites = (productId) => {
+    console.log('Remove from favorites', productId)
     const updatedFavorites = favorites.filter(id => id !== productId);
     setFavorites(updatedFavorites);
     localStorage.setItem(FAVORITES_KEY, JSON.stringify(updatedFavorites));

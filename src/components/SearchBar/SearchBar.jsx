@@ -1,31 +1,36 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import Input from '../Input';
+import { useNavigate } from 'react-router-dom';
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  
+  const navigate = useNavigate();
 
   const handleSearchChange = event => {
-    const query = event.target.value;
-    setSearchQuery(query);
-    onSearch(query);
+    setSearchQuery(event.target.value);
+  };
+
+  const handleSearchSubmit = event => {
+    event.preventDefault();
+    if (searchQuery.trim() !== '') {
+      navigate(`/search/${searchQuery}`);
+    }
   };
 
   return (
     <div className="search-bar">
-      <Input
-        type="is-light"
-        icon="magnifyingGlass"
-        placeholder="Search"
-        value={searchQuery}
-        onChange={handleSearchChange}
-      />
+      <form onSubmit={handleSearchSubmit}>
+        <Input
+          color="is-white"
+          icon="magnifyingGlass"
+          placeholder="Search"
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
+      </form>
     </div>
   );
-};
-
-SearchBar.propTypes = {
-  onSearch: PropTypes.func.isRequired,
 };
 
 export default SearchBar;

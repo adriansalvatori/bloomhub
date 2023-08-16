@@ -4,7 +4,7 @@ import './ProductCard.scss';
 import ProductImage from '../ProductImage'; 
 import Button from '../Button';
 import useFavoriteList from '../../hooks/useFavoriteList';
-import useBasketList from '../../hooks//useBasketList';
+import useBasketList from '../../hooks/useBasketList';
 
 const ProductCard = ({ productId, imageSrc, title, price, type }) => {
   const { favorites, addToFavorites, removeFromFavorites } = useFavoriteList();
@@ -34,10 +34,9 @@ const ProductCard = ({ productId, imageSrc, title, price, type }) => {
       <ProductImage imageUrl={imageSrc} size={100} offset={15} />
         <Button
             variant="is-nude"
-            color="is-primary"
+            color={isFavorite ? "is-dark" : "is-primary"}
             icon="heart"
             onClick={handleFavoriteToggle}
-            isActive={isFavorite}
         >
             Favorite
         </Button>
@@ -47,10 +46,9 @@ const ProductCard = ({ productId, imageSrc, title, price, type }) => {
         </div>
         <Button
             variant="is-rounded"
-            color="is-primary"
+            color={isAddedToBasket ? "is-primary" : "is-dark"} // Set color based on isAddedToBasket
             icon="basket"
             onClick={handleBasketToggle}
-            isActive={isAddedToBasket}
         >
             {isAddedToBasket ? 'Remove from Cart' : 'Add to Cart'}
         </Button>

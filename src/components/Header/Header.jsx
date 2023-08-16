@@ -1,20 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import "./Header.scss";
 import User from '../User';
 import Logo from '../Logo';
+import SearchBar from '../SearchBar/SearchBar';
 
-const Header = ({ logoUrl }) => {
+const Header = () => {
   return (
-    <header className="header">
-      <Logo/>
-      <User/>
-    </header>
+    <>
+     <header className="header">
+        <Logo/>
+        <User/>
+      </header>
+      <SearchBar />
+    </>
   );
-}
-
-Header.propTypes = {
-  logoUrl: PropTypes.string.isRequired,
 }
 
 export default Header;
