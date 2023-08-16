@@ -5,6 +5,7 @@
     
     
     &.is-encapsulated {
+        position: relative;
         display: grid; 
         grid-template-columns: 1.4fr 0.6fr; 
         grid-template-rows: 1.4fr 0.6fr; 
@@ -14,6 +15,8 @@
           ". ."; 
         aspect-ratio: 1/1;
         width: max-content;
+        box-sizing: border-box;
+        max-width: 100%;
 
         .is-nude {
             align-self: self-start;

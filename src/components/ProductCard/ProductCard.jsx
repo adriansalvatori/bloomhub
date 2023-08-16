@@ -31,7 +31,7 @@ const ProductCard = ({ productId, imageSrc, title, price, type }) => {
 
   return (
     <div className={`product-card ${type}`}>
-      <ProductImage imageUrl={imageSrc} size={130} offset={15} />
+      <ProductImage imageUrl={imageSrc} size={100} offset={15} />
         <Button
             variant="is-nude"
             color="is-primary"

@@ -26,7 +26,7 @@ const ProductImage = ({ imageUrl, size, offset }) => {
 
 ProductImage.propTypes = {
   imageUrl: PropTypes.string.isRequired,
-  size: PropTypes.oneOf([350, 250, 130]).isRequired,
+  size: PropTypes.oneOf([300, 200, 100]).isRequired,
   offset: PropTypes.number.isRequired,
 }
 

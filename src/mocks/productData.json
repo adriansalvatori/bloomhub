@@ -1,0 +1,42 @@
+{
+    "featured": [
+      {
+        "productId": 1,
+        "title": "Monstera",
+        "price": 29.99
+      },
+      {
+        "productId": 2,
+        "title": "Snake Plant",
+        "price": 24.99
+      },
+      {
+        "productId": 3,
+        "title": "Fiddle Leaf Fig",
+        "price": 39.99
+      }
+    ],
+    "trending": [
+      {
+        "productId": 1,
+        "title": "Succulent",
+        "price": 15.99
+      },
+      {
+        "productId": 2,
+        "title": "Pothos Plant",
+        "price": 18.99
+      },
+      {
+        "productId": 3,
+        "title": "ZZ Plant",
+        "price": 22.99
+      },
+      {
+        "productId": 4,
+        "title": "Aloe Vera",
+        "price": 12.99
+      }
+    ]
+  }
+  
