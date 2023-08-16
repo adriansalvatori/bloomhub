@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import "./Header.scss";
 import User from '../User';
 import Logo from '../Logo';
@@ -7,13 +7,13 @@ import SearchBar from '../SearchBar/SearchBar';
 
 const Header = () => {
   const location = useLocation();
-
+  const navigate = useNavigate();
   const isIndexRoute = location.pathname === '/';
 
   return (
     <>
       <header className={`header ${isIndexRoute ? 'header-index' : ''}`}>
-        <Logo />
+        <Logo onClick={navigate('/home')} />
         {!isIndexRoute && <User />}
       </header>
       {!isIndexRoute && <SearchBar />}
