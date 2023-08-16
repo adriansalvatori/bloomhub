@@ -1,0 +1,10 @@
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    height: calc( var(--gap) * 4 );
+
+    .user-avatar {
+        height: 100%;
+    }
+}

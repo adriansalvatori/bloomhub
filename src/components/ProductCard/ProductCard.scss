@@ -1,0 +1,22 @@
+@import '../../assets/styles/base/box';
+
+.product-card {
+    @include box(gray-light, primary-dark); 
+    
+    
+    &.is-encapsulated {
+        display: grid; 
+        grid-template-columns: 1.4fr 0.6fr; 
+        grid-template-rows: 1.4fr 0.6fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+          ". ."
+          ". ."; 
+        aspect-ratio: 1/1;
+        width: max-content;
+
+        .is-nude {
+            align-self: self-start;
+        }
+    }
+}

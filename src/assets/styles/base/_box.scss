@@ -1,0 +1,98 @@
+@mixin box($background-color, $color) {
+    padding: var(--gap);
+    background-color: var(--color-#{$background-color});
+    color: var(--color-#{$color});
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s, color 0.3s;
+    font-size: var(--font-button-size, 18px);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Base box class */
+.box {
+    @include box(white, primary-dark);
+}
+
+/* Color modifiers */
+.box.is-primary {
+    @include box(primary, primary-dark);
+}
+
+.box.is-primary-light {
+    @include box(primary-light, primary-dark);
+}
+
+.box.is-black1 {
+    @include box(black1, black2);
+}
+
+.box.is-black2 {
+    @include box(black2, gray-dark);
+}
+
+.box.is-gray-dark {
+    @include box(gray-dark, gray);
+}
+
+.box.is-gray {
+    @include box(gray, gray-light);
+}
+
+.box.is-gray-light {
+    @include box(gray-light, white);
+}
+
+.box.is-white {
+    @include box(white, gray);
+}
+
+.box.is-red {
+    @include box(red, red-dark);
+}
+
+.box.is-red-dark {
+    @include box(red-dark, red);
+}
+
+.box.is-red-light {
+    @include box(red-light, red-dark);
+}
+
+.box.is-blue {
+    @include box(blue, blue-dark);
+}
+
+.box.is-blue-dark {
+    @include box(blue-dark, blue);
+}
+
+.box.is-blue-light {
+    @include box(blue-light, blue-dark);
+}
+
+.box.is-green {
+    @include box(green, green-dark);
+}
+
+.box.is-green-dark {
+    @include box(green-dark, green);
+}
+
+.box.is-green-light {
+    @include box(green-light, green-dark);
+}
+
+.box.is-yellow {
+    @include box(yellow, yellow-dark);
+}
+
+.box.is-yellow-dark {
+    @include box(yellow-dark, yellow);
+}
+
+.box.is-yellow-light {
+    @include box(yellow-light, yellow-dark);
+}

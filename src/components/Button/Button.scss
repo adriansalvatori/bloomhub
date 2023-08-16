@@ -1,0 +1,48 @@
+@import '../../assets/styles/base/box';
+
+.button {
+  @include box(green-light, green-dark); // Use the mixin for box styles
+  cursor: pointer;
+
+  &.is-primary {
+    @include box(primary, primary-dark);
+    &:hover {
+        background-color: var(--color-green);
+    }
+  }
+
+  &.is-dark {
+    @include box(primary-dark, primary);
+    &:hover {
+        background-color: var(--color-black1);
+    }
+  }
+
+  &.is-light {
+    @include box(green-light, primary-dark);
+    &:hover {
+        background-color: var(--color-green);
+    }
+  }
+
+  &.is-rounded, &.is-nude {
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+    .text {
+      display:none;
+    }
+  }
+
+  &.is-rounded {
+    background-color: var(--color-white);
+  }
+  
+  &.is-nude {
+    background-color: transparent;
+  }
+
+  &.is-fullwidth {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

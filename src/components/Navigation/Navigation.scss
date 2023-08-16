@@ -1,0 +1,18 @@
+@import '../../assets/styles/base/box';
+
+.navigation-container {
+    @include box(white, primary-dark);
+    position: fixed;
+    bottom: var(--gap);
+    left: var(--gap);
+    right: var(--gap);
+    justify-content: space-between;
+
+    // Style each Button inside the Navigation
+    .button {
+        margin: 0; // Reset margin for consistent spacing
+        &:active, &:focus {
+            color: var(--color-primary);
+        }
+    }
+}

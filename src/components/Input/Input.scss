@@ -1,0 +1,30 @@
+/* Input.scss */
+@import '../../assets/styles/base/box';
+
+.input {
+  @include box(gray-light, black2); // Use the mixin for box styles
+
+  &.is-primary {
+    @include box(gray-light, black2);
+    border-color: var(--color-primary);
+  }
+
+  &.is-white {
+    @include box(white, black-2);
+    border-color: var(--color-white);
+  }
+
+  .MuiInput-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: var(--font-button-size, 18px);
+    font-weight: bold;
+    font-family: var(--font-body-family);
+  }
+  &.is-fullwidth {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
