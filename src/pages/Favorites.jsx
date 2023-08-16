@@ -17,7 +17,7 @@ const Favorites = () => {
   return (
     <div className="favorites">
       <Header />
-      <h3 className="section-title">Your Favorite Products</h3>
+      <h3 className="section-title bold">Your Favorite Products</h3>
       <Columns
         desktopSize="is-one-fifth"
         tabletSize="is-one-third"
@@ -26,6 +26,7 @@ const Favorites = () => {
         {favoriteProducts.map(product => (
           <ProductCard
             key={product.productId}
+            productId={product.productId}
             imageSrc={Placeholder}
             title={product.title}
             price={product.price}

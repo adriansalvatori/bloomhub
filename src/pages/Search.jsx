@@ -5,7 +5,7 @@ import Header from '../components/Header/Header';
 import Navigation from '../components/Navigation/Navigation';
 import Columns from '../components/Columns';
 import Placeholder from '../assets/images/Placeholder.png';
-import productData from '../mocks/productData.json'; // Import the JSON data
+import productData from '../mocks/productData.json'; 
 
 const Search = () => {
   const { search } = useParams();
@@ -18,7 +18,7 @@ const Search = () => {
   return (
     <div className="search-results">
       <Header />
-      <h3 className="section-title">Search Results for "{searchQuery}"</h3>
+      <h3 className="section-title bold">Search Results for "{searchQuery}"</h3>
       <Columns
         desktopSize="is-one-fifth"
         tabletSize="is-one-third"

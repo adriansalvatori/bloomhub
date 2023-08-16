@@ -16,7 +16,7 @@ import Search from './pages/Search.jsx';
 import Favorites from './pages/Favorites.jsx';
 // import Detail from './pages/Detail.jsx';
 import Basket from './pages/Basket.jsx';
-// import User from './pages/User.jsx';
+import User from './pages/User.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -28,8 +28,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/search/:search" element={<Search />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/checkout" element={<Basket />} />
+          <Route path="/settings" element={<User />} />
           {/*<Route path="/detail/:id" element={<Detail />} />
-          <Route path="/user" element={<User />} /> */}
+           */}
 
           <Route path="/elements" element={<Elements />} />
         </Route>

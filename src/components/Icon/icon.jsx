@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IconContext, SignIn, UserFocus, MagnifyingGlass, Heart, Basket, HouseLine, Scan, User, Moon, PlusCircle, MinusCircle, Trash, SignOut, ArrowRight } from '@phosphor-icons/react';
+import { IconContext, SignIn, UserFocus, MagnifyingGlass, Heart, Basket, HouseLine, Scan, User, Moon, Sun, PlusCircle, MinusCircle, Trash, SignOut, ArrowRight } from '@phosphor-icons/react';
 import "./Icon.scss";
 
 const Icon = ({ name, color, accent }) => {
@@ -14,6 +14,7 @@ const Icon = ({ name, color, accent }) => {
     scan: <Scan />,
     user: <User />,
     moon: <Moon />,
+    sun: <Sun />,
     plusCircle: <PlusCircle />,
     minusCircle: <MinusCircle />,
     trash: <Trash />,
@@ -47,6 +48,7 @@ Icon.propTypes = {
     'houseLine',
     'scan',
     'user',
+    'sun',
     'moon',
     'plusCircle',
     'minusCircle',

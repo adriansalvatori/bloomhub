@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {useAutoAnimate} from '@formkit/auto-animate/react'
+
 import './Columns.scss';
 
 const Columns = ({ children, columnSize, tabletSize, mobileSize, isCarousel }) => {
   const getColumnClassName = (size, prefix) => `${prefix}-${size} column`;
-
+  const animationParent = useAutoAnimate();
   return (
     <div className={`columns ${isCarousel ? 'carousel' : ''}`}>
       {React.Children.map(children, (child) => (
         <div
+          ref={animationParent}
           className={`
             ${getColumnClassName(columnSize, 'desktop')}
             ${getColumnClassName(tabletSize, 'tablet')}

@@ -51,6 +51,12 @@ button { font-size: var(--font-button-size, 18px); }
   margin-bottom: calc(var(--gap) * 8)
 }
 
+.is-centered {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
 /* Set Base Components styles */
 
 @import './box';

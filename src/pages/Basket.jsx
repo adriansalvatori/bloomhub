@@ -21,11 +21,11 @@ const Basket = () => {
   return (
     <div className="basket">
       <Header />
-      <h3 className="section-title">Your Basket</h3>
+      <h3 className="section-title bold">Your Basket</h3>
       <Columns
         desktopSize="is-one-fifth"
         tabletSize="is-one-third"
-        mobileSize="is-two-thirds"
+        mobileSize="is-fullwidth"
       >
         {basketProducts.map(product => (
           <ProductCard
@@ -33,7 +33,7 @@ const Basket = () => {
             imageSrc={Placeholder}
             title={product.title}
             price={product.price}
-            type="is-encapsulated"
+            type="is-fullwidth"
             isBasketView={true}
           />
         ))}
