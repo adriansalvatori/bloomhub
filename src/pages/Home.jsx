@@ -21,9 +21,9 @@ const Home = () => {
       <h3 className="section-title bold separate-from-top">Featured</h3>
       <Columns
         isCarousel
-        desktopSize="is-one-fifth"
-        tabletSize="is-one-third"
-        mobileSize="is-two-thirds"
+        desktopSize="is-one-third"
+        tabletSize="is-half"
+        mobileSize="is-fullwidth"
       >
         {featuredProducts.map((product) => (
           <ProductCard
@@ -32,7 +32,7 @@ const Home = () => {
             imageSrc={Placeholder}
             title={product.title}
             price={product.price}
-            type="is-encapsulated"
+            type="is-fullwidth"
           />
         ))}
       </Columns>
@@ -41,7 +41,7 @@ const Home = () => {
         isCarousel
         desktopSize="is-one-fifth"
         tabletSize="is-one-third"
-        mobileSize="is-two-thirds"
+        mobileSize="is-half"
       >
         {trendingProducts.map((product) => (
           <ProductCard

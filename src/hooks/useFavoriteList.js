@@ -1,30 +1,34 @@
 import { useState, useEffect } from 'react';
 
-const FAVORITES_KEY = 'favorites';
+const useFavoritesList = () => {
+  // Load favorites from local storage if available, or initialize with an empty array
+  const initialFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-const useFavoriteList = () => {
-  const [favorites, setFavorites] = useState([]);
+  // State to manage the favorites list
+  const [favorites, setFavorites] = useState(initialFavorites);
 
+  // Function to add an item to favorites
+  const addToFavorites = (id) => {
+    const updatedFavorites = [...favorites, id];
+    setFavorites(updatedFavorites);
+  };
+
+  // Function to remove an item from favorites
+  const removeFromFavorites = (id) => {
+    const updatedFavorites = favorites.filter(favId => favId !== id);
+    setFavorites(updatedFavorites);
+  };
+
+  // Save favorites to local storage whenever it changes
   useEffect(() => {
-    const storedFavorites = JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
-    setFavorites(storedFavorites);
-  }, []);
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }, [favorites]);
 
-  const addToFavorites = (productId) => {
-    console.log('addToFavorites', productId);
-    const updatedFavorites = [...favorites, productId];
-    setFavorites(updatedFavorites);
-    localStorage.setItem(FAVORITES_KEY, JSON.stringify(updatedFavorites));
+  return {
+    favorites,
+    addToFavorites,
+    removeFromFavorites,
   };
+};
 
-  const removeFromFavorites = (productId) => {
-    console.log('Remove from favorites', productId)
-    const updatedFavorites = favorites.filter(id => id !== productId);
-    setFavorites(updatedFavorites);
-    localStorage.setItem(FAVORITES_KEY, JSON.stringify(updatedFavorites));
-  };
-
-  return { favorites, addToFavorites, removeFromFavorites };
-}
-
-export default useFavoriteList;
+export default useFavoritesList;

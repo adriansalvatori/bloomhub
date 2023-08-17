@@ -13,12 +13,13 @@ const ProductCard = ({ productId, imageSrc, title, price, type }) => {
   const isFavorite = favorites.includes(productId);
   const isAddedToBasket = basket.includes(productId);
 
-  const handleFavoriteToggle = () => {
+  const handleFavoriteToggle = (productId) => () => {
     if (isFavorite) {
       removeFromFavorites(productId);
     } else {
       addToFavorites(productId);
     }
+    console.log(productId, favorites)
   };
 
   const handleBasketToggle = () => {
@@ -32,26 +33,26 @@ const ProductCard = ({ productId, imageSrc, title, price, type }) => {
   return (
     <div className={`product-card ${type}`}>
       <ProductImage imageUrl={imageSrc} size={100} offset={15} />
-        <Button
-            variant="is-nude"
-            color={isFavorite ? "is-dark" : "is-primary"}
-            icon="heart"
-            onClick={handleFavoriteToggle}
-        >
-            Favorite
-        </Button>
-        <div className="info">
-            <h6 className="product-title">{title}</h6>
-            <p className="caption">${price}</p>
-        </div>
-        <Button
-            variant="is-rounded"
-            color={isAddedToBasket ? "is-primary" : "is-dark"} // Set color based on isAddedToBasket
-            icon="basket"
-            onClick={handleBasketToggle}
-        >
-            {isAddedToBasket ? 'Remove from Cart' : 'Add to Cart'}
-        </Button>
+      <Button
+          variant="is-nude"
+          color={isFavorite ? "is-red" : "is-primary"}
+          icon="heart"
+          onClick={handleFavoriteToggle(productId)}
+      >
+          Favorite
+      </Button>
+      <div className="info">
+          <h6 className="product-title">{title}</h6>
+          <p className="caption">${price}</p>
+      </div>
+      <Button
+          variant="is-rounded"
+          color={isAddedToBasket ? "is-primary" : "is-dark"} // Set color based on isAddedToBasket
+          icon="basket"
+          onClick={handleBasketToggle}
+      >
+          {isAddedToBasket ? 'Remove from Cart' : 'Add to Cart'}
+      </Button>
     </div>
   );
 }

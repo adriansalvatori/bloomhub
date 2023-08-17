@@ -4,11 +4,11 @@ import "./ProductImage.scss";
 
 const ProductImage = ({ imageUrl, size, offset }) => {
   const imageSize = {
-    width: size,
-    height: size,
+    width: size * 0.85,
+    height: size * 0.85,
   };
 
-  const scale = 1.15 + offset / size; // Calculate the scaling factor
+  const scale = 1.25 + offset / size; // Calculate the scaling factor
 
   const imageStyles = {
     ...imageSize,

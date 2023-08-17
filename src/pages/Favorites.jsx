@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ProductCard from '../components/ProductCard';
 import Header from '../components/Header';
 import Navigation from '../components/Navigation';
@@ -9,10 +9,14 @@ import productData from '../mocks/productData.json';
 
 const Favorites = () => {
   const { favorites } = useFavoriteList();
+  const allProducts = productData.featured.concat(productData.trending);
 
-  const favoriteProducts = productData.featured.concat(productData.trending).filter(product => {
-    return favorites.includes(product.productId);
-  });
+  const [favoriteProducts, setFavoriteProducts] = useState([]);
+
+  useEffect(() => {
+    const filteredProducts = allProducts.filter(product => favorites.includes(product.productId));
+    setFavoriteProducts(filteredProducts);
+  }, [favorites]);
 
   return (
     <div className="favorites">
@@ -21,7 +25,7 @@ const Favorites = () => {
       <Columns
         desktopSize="is-one-fifth"
         tabletSize="is-one-third"
-        mobileSize="is-two-thirds"
+        mobileSize="is-half"
       >
         {favoriteProducts.map(product => (
           <ProductCard

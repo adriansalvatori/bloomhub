@@ -17,7 +17,7 @@ const Button = ({ children, color, size, icon, variant, ...otherProps }) => {
 
 Button.propTypes = {
   children: PropTypes.node,
-  color: PropTypes.oneOf(['is-primary', 'is-dark', 'is-light']),
+  color: PropTypes.oneOf(['is-primary', 'is-dark', 'is-light', 'is-red', 'is-yellow', 'is-blue']),
   icon: PropTypes.string,
   size: PropTypes.oneOf(['is-fullwidth', 'is-contained']),
   variant: PropTypes.oneOf(['', 'is-nude', 'is-rounded']), 

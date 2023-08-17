@@ -11,7 +11,7 @@ $column-sizes: (
   @each $size, $width in $sizes {
     &.#{$prefix}-#{$size} {
       flex: 0 0 $width;
-      max-width: calc(#{$width} - (var(--gap) * 2));
+      max-width: calc(#{$width} - (var(--gap) / 2));
     }
   }
 }

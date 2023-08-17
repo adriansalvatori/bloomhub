@@ -25,6 +25,27 @@
     }
   }
 
+  &.is-blue {
+    @include box(blue, blue-dark);
+    &:hover {
+        background-color: var(--color-blue-light);
+    }
+  }
+
+  &.is-yellow {
+    @include box(yellow, yellow-dark);
+    &:hover {
+        background-color: var(--color-yellow-light);
+    }
+  }
+
+  &.is-red {
+    @include box(red, red-dark);
+    &:hover {
+        background-color: var(--color-red-light);
+    }
+  }
+
   &.is-rounded, &.is-nude {
     border-radius: 100%;
     aspect-ratio: 1/1;
