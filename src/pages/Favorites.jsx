@@ -4,11 +4,11 @@ import Header from '../components/Header';
 import Navigation from '../components/Navigation';
 import Columns from '../components/Columns';
 import Placeholder from '../assets/images/Placeholder.png';
-import useFavoriteList from '../hooks/useFavoriteList';
+import { useGlobalState } from '../hooks/globalState'; 
 import productData from '../mocks/productData.json';
 
 const Favorites = () => {
-  const { favorites } = useFavoriteList();
+  const { favorites } = useGlobalState(); 
   const allProducts = productData.featured.concat(productData.trending);
 
   const [favoriteProducts, setFavoriteProducts] = useState([]);

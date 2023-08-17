@@ -3,23 +3,16 @@ import PropTypes from 'prop-types';
 import './ProductCard.scss'; 
 import ProductImage from '../ProductImage'; 
 import Button from '../Button';
-import useFavoriteList from '../../hooks/useFavoriteList';
-import useBasketList from '../../hooks/useBasketList';
+import { useGlobalState } from '../../hooks/globalState';
 
 const ProductCard = ({ productId, imageSrc, title, price, type }) => {
-  const { favorites, addToFavorites, removeFromFavorites } = useFavoriteList();
-  const { basket, addToBasket, removeFromBasket } = useBasketList();
+  const { favorites, toggleFavorite, basket, addToBasket, removeFromBasket } = useGlobalState();
 
   const isFavorite = favorites.includes(productId);
   const isAddedToBasket = basket.includes(productId);
 
-  const handleFavoriteToggle = (productId) => () => {
-    if (isFavorite) {
-      removeFromFavorites(productId);
-    } else {
-      addToFavorites(productId);
-    }
-    console.log(productId, favorites)
+  const handleFavoriteToggle = () => {
+    toggleFavorite(productId);
   };
 
   const handleBasketToggle = () => {
@@ -37,7 +30,7 @@ const ProductCard = ({ productId, imageSrc, title, price, type }) => {
           variant="is-nude"
           color={isFavorite ? "is-red" : "is-primary"}
           icon="heart"
-          onClick={handleFavoriteToggle(productId)}
+          onClick={handleFavoriteToggle}
       >
           Favorite
       </Button>
@@ -47,7 +40,7 @@ const ProductCard = ({ productId, imageSrc, title, price, type }) => {
       </div>
       <Button
           variant="is-rounded"
-          color={isAddedToBasket ? "is-primary" : "is-dark"} // Set color based on isAddedToBasket
+          color={isAddedToBasket ? "is-primary" : "is-dark"} 
           icon="basket"
           onClick={handleBasketToggle}
       >

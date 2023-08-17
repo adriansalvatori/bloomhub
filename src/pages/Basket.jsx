@@ -4,11 +4,11 @@ import Header from '../components/Header';
 import Navigation from '../components/Navigation';
 import Columns from '../components/Columns';
 import Placeholder from '../assets/images/Placeholder.png';
-import useBasketList from '../hooks/useBasketList';
+import { useGlobalState } from '../hooks/globalState';
 import productData from '../mocks/productData.json';
 
 const Basket = () => {
-  const { basket } = useBasketList();
+  const { basket } = useGlobalState(); 
 
   const getProductData = (productId) => {
     const allProducts = [...productData.featured, ...productData.trending];

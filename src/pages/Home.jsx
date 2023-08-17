@@ -4,13 +4,12 @@ import ProductCard from '../components/ProductCard';
 import Navigation from '../components/Navigation';
 import Columns from '../components/Columns';
 import Placeholder from '../assets/images/Placeholder.png';
-import productData from '../mocks/productData.json'; // Import the JSON data
+import productData from '../mocks/productData.json'; 
 
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [trendingProducts, setTrendingProducts] = useState([]);
   useEffect(() => {
-    // Set the featured and trending products from the JSON data
     setFeaturedProducts(productData.featured);
     setTrendingProducts(productData.trending);
   }, []);

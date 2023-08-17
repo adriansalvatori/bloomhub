@@ -17,24 +17,27 @@ import Favorites from './pages/Favorites.jsx';
 // import Detail from './pages/Detail.jsx';
 import Basket from './pages/Basket.jsx';
 import User from './pages/User.jsx';
+import { GlobalStateProvider } from './hooks/globalState';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<FlexContainer fullHeight direction="column" justify="flex-start" align="flex-start" gap={2} />}>
-          <Route index element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/search/:search" element={<Search />} />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route path="/checkout" element={<Basket />} />
-          <Route path="/settings" element={<User />} />
-          {/*<Route path="/detail/:id" element={<Detail />} />
-           */}
+    <GlobalStateProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<FlexContainer fullHeight direction="column" justify="flex-start" align="flex-start" gap={2} />}>
+            <Route index element={<Login />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/search/:search" element={<Search />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/checkout" element={<Basket />} />
+            <Route path="/settings" element={<User />} />
+            {/*<Route path="/detail/:id" element={<Detail />} />
+            */}
 
-          <Route path="/elements" element={<Elements />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+            <Route path="/elements" element={<Elements />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </GlobalStateProvider>
   </React.StrictMode>
 )
