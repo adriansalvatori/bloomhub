@@ -1,20 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Navigation from '../components/Navigation';
 import Avatar from '../assets/images/Avatar.png';
 import Button from '../components/Button';
+import { useGlobalState } from '../hooks/globalState';
 
 const UserSettings = () => {
   const navigate = useNavigate();
   const username = localStorage.getItem('username') || 'Adrián';
-  const [darkMode, setDarkMode] = useState(localStorage.getItem('darkMode') === 'true');
-
-  const handleDarkModeToggle = () => {
-    const newDarkMode = !darkMode;
-    setDarkMode(newDarkMode);
-    localStorage.setItem('darkMode', newDarkMode);
-  };
+  const { darkMode, toggleDarkMode } = useGlobalState();
 
   const handleSignOut = () => {
     navigate('/');
@@ -35,7 +30,7 @@ const UserSettings = () => {
         size="is-fullwidth"
         color={darkMode ? 'is-light' : 'is-dark'}
         icon={darkMode ? 'sun' : 'moon'}
-        onClick={handleDarkModeToggle}
+        onClick={toggleDarkMode}
       >
         {darkMode ? 'Light Mode' : 'Dark Mode'}
       </Button>

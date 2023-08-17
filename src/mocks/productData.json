@@ -1,42 +1,78 @@
 {
-    "featured": [
-      {
-        "productId": 1,
-        "title": "Monstera",
-        "price": 29.99
-      },
-      {
-        "productId": 2,
-        "title": "Snake Plant",
-        "price": 24.99
-      },
-      {
-        "productId": 3,
-        "title": "Fiddle Leaf Fig",
-        "price": 39.99
-      }
-    ],
-    "trending": [
-      {
-        "productId": 4,
-        "title": "Succulent",
-        "price": 15.99
-      },
-      {
-        "productId": 5,
-        "title": "Pothos Plant",
-        "price": 18.99
-      },
-      {
-        "productId": 6,
-        "title": "ZZ Plant",
-        "price": 22.99
-      },
-      {
-        "productId": 7,
-        "title": "Aloe Vera",
-        "price": 12.99
-      }
-    ]
-  }
-  
+  "featured": [
+    {
+      "productId": 1,
+      "title": "Monstera",
+      "price": 29.99
+    },
+    {
+      "productId": 2,
+      "title": "Snake Plant",
+      "price": 24.99
+    },
+    {
+      "productId": 3,
+      "title": "Fiddle Leaf Fig",
+      "price": 39.99
+    },
+    {
+      "productId": 8,
+      "title": "Rubber Plant",
+      "price": 28.99
+    },
+    {
+      "productId": 9,
+      "title": "Peace Lily",
+      "price": 21.99
+    }
+  ],
+  "trending": [
+    {
+      "productId": 4,
+      "title": "Succulent",
+      "price": 15.99
+    },
+    {
+      "productId": 5,
+      "title": "Pothos Plant",
+      "price": 18.99
+    },
+    {
+      "productId": 6,
+      "title": "ZZ Plant",
+      "price": 22.99
+    },
+    {
+      "productId": 7,
+      "title": "Aloe Vera",
+      "price": 12.99
+    },
+    {
+      "productId": 10,
+      "title": "Spider Plant",
+      "price": 16.99
+    }
+  ],
+  "categories": [
+    {
+      "categoryId": 1,
+      "name": "Indoor Plants",
+      "products": [1, 2, 3, 8, 9]
+    },
+    {
+      "categoryId": 2,
+      "name": "Succulents",
+      "products": [4, 10]
+    },
+    {
+      "categoryId": 3,
+      "name": "Trailing Plants",
+      "products": [5]
+    },
+    {
+      "categoryId": 4,
+      "name": "Easy Care",
+      "products": [6, 7]
+    }
+  ]
+}

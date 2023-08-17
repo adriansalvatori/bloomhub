@@ -10,7 +10,7 @@ const Logo = () => {
   }
 
   return (
-    <div onClick={handleLogoClick} className="logo">
+    <div style={{cursor: 'pointer'}} onClick={handleLogoClick} className="logo">
       <img src={ISO} alt="Brand Logo" className="brand-logo" />
     </div>
   );

@@ -40,7 +40,7 @@ const ProductCard = ({ productId, imageSrc, title, price, type }) => {
       </div>
       <Button
           variant="is-rounded"
-          color={isAddedToBasket ? "is-primary" : "is-dark"} 
+          color={isAddedToBasket ? "is-dark" : "is-primary"} 
           icon="basket"
           onClick={handleBasketToggle}
       >

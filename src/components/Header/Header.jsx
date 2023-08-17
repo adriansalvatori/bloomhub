@@ -13,7 +13,7 @@ const Header = () => {
     <>
       <header className={`header ${isIndexRoute ? 'header-index' : ''}`}>
         <Logo />
-        {/* {!isIndexRoute && <User />} */}
+        {!isIndexRoute && <User />}
       </header>
       {!isIndexRoute && <SearchBar />}
     </>
