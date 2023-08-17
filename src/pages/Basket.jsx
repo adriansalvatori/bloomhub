@@ -30,6 +30,7 @@ const Basket = () => {
         {basketProducts.map(product => (
           <ProductCard
             key={product.productId}
+            productId={product.productId}
             imageSrc={Placeholder}
             title={product.title}
             price={product.price}
